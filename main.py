@@ -20,43 +20,43 @@ tone1.amplitude = 0.1
 tone1.channel = "left"
 
 #---------------------------------------------------------------------------
-tone2.frequency = 325
+tone2.frequency = 600
 tone2.amplitude = 0.1
 tone2.channel = "both"
 
 #---------------------------------------------------------------------------
-krl.frequency = 600
+krl.frequency = 475
 krl.amplitude = 0.1
 krl.code = 0x2C
 
 #---------------------------------------------------------------------------
-alsn.frequency = 400
+alsn.frequency = 75
 alsn.code = "RedYellow"
 alsn.channel = "both"
 alsn.amplitude = 0.1
 
 #---------------------------------------------------------------------------
-alsen.frequency = 275
+alsen.frequency = 174.89
 alsen.amplitude = 0.1
 alsen.channel = "both"
 alsen.code = [0x2C,0x2C]
 
 #---------------------------------------------------------------------------
-ars.frequency1 = 275
+ars.frequency1 = 75
 ars.frequency2 = 125
 
 ars.amplitude1 = 0
 ars.amplitude2 = 0.1
-ars.sao = True
+ars.sao = False
 ars.channel = "both"
 
 #---------------------------------------------------------------------------
 #tone1.stream.start()
 #tone2.stream.start()
-#krl.stream.start()
-#alsn.stream.start()
-#alsen.stream.start()
-ars.stream.start()
+krl.stream.start()
+alsn.stream.start()
+alsen.stream.start()
+#ars.stream.start()
 
 #---------------------------------------------------------------------------
 

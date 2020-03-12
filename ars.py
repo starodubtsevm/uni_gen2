@@ -32,7 +32,6 @@ class ars_gen(object):
         for i in range(len(t)):
             self.count_ars+= 1.0/self.fs
             if self.sao == True:
-                print ("sao on")
                 if (self.count_ars <= self.sao_param['pulse1']):
                     self.ars_on = 1
                 elif (self.count_ars > self.sao_param['pulse1']) &\
