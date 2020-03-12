@@ -11,8 +11,7 @@ from ars import*
 tone1 = one_tone()
 tone2 = one_tone()
 krl = krl_gen()
-
-#alsn = alsn_gen()
+alsn = alsn_gen()
 #alsen = alsen_gen()
 #ars = ars_gen()
 
@@ -32,9 +31,9 @@ krl.amplitude = 0.1
 krl.code = 0x2C
 
 #---------------------------------------------------------------------------
-#alsn.mode = "alsn"
-#alsn.frequency = 400
-#alsn.amplitude = 0.1
+alsn.frequency = 400
+alsn.code = "RedYellow"
+alsn.amplitude = 0.1
 
 #---------------------------------------------------------------------------
 #alsn.mode = "alsen"
@@ -44,7 +43,9 @@ krl.code = 0x2C
 #---------------------------------------------------------------------------
 #tone1.stream.start()
 #tone2.stream.start()
-krl.stream.start()
+#krl.stream.start()
+alsn.stream.start()
+
 #---------------------------------------------------------------------------
 
 input("...Press Enter to exit...")
