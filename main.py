@@ -1,11 +1,33 @@
 #!/usr/bin/env python3
 
-from classes import *
+from generator import *
 
 #---------------------------------------------------------------------------
-#afc1 = afc_device(amplitude,frequency,blocksize,samplerate,
-#	freq_min,freq_max,freq_step,time_conv)
-afc1 = afc_device()
+
+krl = gen_device()
+ars = gen_device()
+#alsn = gen_device()
+#alsen = gen_device()
+
+krl.mode = "krl"
+krl.frequency = 800
+krl.amplitude = 0.1
+
+ars.mode = "asr"
+ars.frequency = 325
+ars.amplitude = 0.1
+
+#alsn.mode = "alsn"
+#alsn.frequency = 400
+#alsn.amplitude = 0.1
+
+#alsn.mode = "alsen"
+#alsn.frequency = 400
+#alsn.amplitude = 0.1
+
+
+krl.stream.start()
+ars.stream.start()
 
 input("...Press Enter to exit...")
 #---------------------------------------------------------------------------
