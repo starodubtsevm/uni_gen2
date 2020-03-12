@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import sounddevice as sd
-import sys
-import queue
-import numpy as np
-import time
+from const import*
 
 #---------------------------------------
 class one_tone(object):
@@ -21,7 +17,6 @@ class one_tone(object):
             A_l = 1
         else:
             A_l = 0
-
         if self.channel == "right" or self.channel == "both":
             A_r = 1
         else:
@@ -51,7 +46,7 @@ class one_tone(object):
         self.mode = ""
         self.q = queue.Queue()
         sd.default.blocksize = 0
-        sd.default.samplerate = 8000
+        sd.default.samplerate = fs
         sd.default.channels = 2
         self.stream = sd.Stream(device = (sd.default.device, sd.default.device),\
                                                  callback = self.__audio_callback)

@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import sounddevice as sd
-import sys
-import queue
-import numpy as np
-import time
+from const import*
 
 #---------------------------------------
 class alsn_gen(object):
@@ -108,7 +104,7 @@ class alsn_gen(object):
         """Инициализация класса"""
         self.start_idx = 0
         self.downsample = 2
-        self.fs = 8000
+        self.fs = fs
         self.channel = "both"
         self.count_alsn = 0
         self.frequency = 50

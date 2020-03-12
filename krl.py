@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import sounddevice as sd
-import sys
-import queue
-import numpy as np
-import time
+from const import*
 
 #---------------------------------------
 class krl_gen(object):
@@ -43,6 +39,8 @@ class krl_gen(object):
                 self.num_bit+= 1
                 if self.num_bit > 7:
                     self.num_bit = 0
+                    for j in range(7, -1, -1):
+                        self.data_in[j] = ((self.code & 1<<j)>>j)
 
         data_stereo = np.column_stack([data_left, data_right])
         outdata[::] = data_stereo
@@ -55,13 +53,13 @@ class krl_gen(object):
         """Инициализация класса"""
         self.start_idx = 0
         self.downsample = 2
-        self.fs = 8000
+        self.fs = fs
         self.channel = "both"
-        self.data_in= []
+        self.data_in= np.zeros(8)
         self.frequency = 475
         self.krl_fdev = 11
-        self.krl_speed = 12.897
-        self.code = 0x2C
+        self.krl_speed = data_rate
+        self.code = 0x00
         self.num_bit = 0
         self.count_krl = 0
         self.channels = [1,2]
@@ -74,5 +72,5 @@ class krl_gen(object):
                                                  callback = self.__audio_callback)
         self.mapping = [c - 1 for c in self.channels]
         for j in range(7, -1, -1):
-            self.data_in.append((self.code & 1<<j)>>j)
+            self.data_in[j] = ((self.code & 1<<j)>>j)
 

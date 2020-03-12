@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import sounddevice as sd
-import sys
-import queue
-import numpy as np
-import time
+from const import*
 
 #---------------------------------------
 class ars_gen(object):
@@ -58,7 +54,7 @@ class ars_gen(object):
         """Инициализация класса"""
         self.start_idx = 0
         self.downsample = 2
-        self.fs = 8000
+        self.fs = fs
         self.channel = "both"
         self.ars_on = 1
         self.count_ars = 0

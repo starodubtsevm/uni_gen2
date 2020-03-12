@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-from one_tone import *
+from one_tone import*
 from alsen import*
 from alsn import*
 from krl import*
 from ars import*
+from const import*
 
 #---------------------------------------------------------------------------
 tone1 = one_tone()
@@ -46,7 +47,7 @@ ars.channel = "both"
 #---------------------------------------------------------------------------
 #tone1.stream.start()
 krl.stream.start()
-alsn.stream.start()
+#alsn.stream.start()
 #alsen.stream.start()
 #ars.stream.start()
 
@@ -54,3 +55,4 @@ alsn.stream.start()
 
 input("...Press Enter to exit...")
 #---------------------------------------------------------------------------
+

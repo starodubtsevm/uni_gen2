@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import sounddevice as sd
-import sys
-import queue
-import numpy as np
-import time
+from const import*
 
 #---------------------------------------
 class alsen_gen(object):
@@ -69,7 +65,7 @@ class alsen_gen(object):
         """Инициализация класса"""
         self.start_idx = 0
         self.downsample = 2
-        self.fs = 8000
+        self.fs = fs
         self.channel = "both"
         self.count_alsen = 0
         self.count_bit = 8
@@ -80,7 +76,7 @@ class alsen_gen(object):
         self.Byte1 = self.code[0]
         self.Byte2 = self.code[1]
         self.frequency = 174.89
-        self.speed = 12.897
+        self.speed = data_rate
         self.imp_duty_count = int((1/self.speed)/(1/self.fs))
         self.channels = [1,2]
         self.amplitude = 0.1
