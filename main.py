@@ -1,33 +1,51 @@
 #!/usr/bin/env python3
 
-from generator import *
+from one_tone import *
+from alsen import*
+from alsn import*
+from krl import*
+from ars import*
+
 
 #---------------------------------------------------------------------------
+tone1 = one_tone()
+tone2 = one_tone()
+krl = krl_gen()
 
-krl = gen_device()
-ars = gen_device()
-#alsn = gen_device()
-#alsen = gen_device()
+#alsn = alsn_gen()
+#alsen = alsen_gen()
+#ars = ars_gen()
 
-krl.mode = "krl"
-krl.frequency = 800
+#---------------------------------------------------------------------------
+tone1.frequency = 800
+tone1.amplitude = 0.1
+tone1.channel = "left"
+
+#---------------------------------------------------------------------------
+tone2.frequency = 325
+tone2.amplitude = 0.1
+tone2.channel = "both"
+
+#---------------------------------------------------------------------------
+krl.frequency = 600
 krl.amplitude = 0.1
+krl.code = 0x2C
 
-ars.mode = "asr"
-ars.frequency = 325
-ars.amplitude = 0.1
-
+#---------------------------------------------------------------------------
 #alsn.mode = "alsn"
 #alsn.frequency = 400
 #alsn.amplitude = 0.1
 
+#---------------------------------------------------------------------------
 #alsn.mode = "alsen"
 #alsn.frequency = 400
 #alsn.amplitude = 0.1
 
-
+#---------------------------------------------------------------------------
+#tone1.stream.start()
+#tone2.stream.start()
 krl.stream.start()
-ars.stream.start()
+#---------------------------------------------------------------------------
 
 input("...Press Enter to exit...")
 #---------------------------------------------------------------------------
