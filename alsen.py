@@ -81,12 +81,12 @@ class alsen_gen(object):
         self.Byte2 = self.code[1]
         self.frequency = 475
         self.speed = 12.987
-        self.imp_duty_count = int((1/self.speed)/(1/self.fs))        
+        self.imp_duty_count = int((1/self.speed)/(1/self.fs))
         self.channels = [1,2]
         self.amplitude = 0.1
         self.q = queue.Queue()
         sd.default.blocksize = 0
-        sd.default.samplerate = 8000
+        sd.default.samplerate = self.fs
         sd.default.channels = 2
         self.stream = sd.Stream(device = (sd.default.device, sd.default.device),\
                                                  callback = self.__audio_callback)

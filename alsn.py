@@ -137,7 +137,7 @@ class alsn_gen(object):
         self.amplitude = 0.1
         self.q = queue.Queue()
         sd.default.blocksize = 0
-        sd.default.samplerate = 8000
+        sd.default.samplerate = self.fs
         sd.default.channels = 2
         self.stream = sd.Stream(device = (sd.default.device, sd.default.device),\
                                                  callback = self.__audio_callback)
