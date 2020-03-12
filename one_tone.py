@@ -42,7 +42,7 @@ class one_tone(object):
         """Инициализация класса"""
         self.start_idx = 0
         self.downsample = 2
-        self.channel = "left"
+        self.channel = "both"
         self.data_left  = []
         self.data_right = []
         self.frequency = 800

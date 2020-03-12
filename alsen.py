@@ -79,8 +79,8 @@ class alsen_gen(object):
         self.code = [0x2C,0x2C]
         self.Byte1 = self.code[0]
         self.Byte2 = self.code[1]
-        self.frequency = 475
-        self.speed = 12.987
+        self.frequency = 174.89
+        self.speed = 12.897
         self.imp_duty_count = int((1/self.speed)/(1/self.fs))
         self.channels = [1,2]
         self.amplitude = 0.1

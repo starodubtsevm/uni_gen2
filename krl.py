@@ -60,13 +60,12 @@ class krl_gen(object):
         self.data_in= []
         self.frequency = 475
         self.krl_fdev = 11
-        self.krl_speed = 12.987
+        self.krl_speed = 12.897
         self.code = 0x2C
         self.num_bit = 0
         self.count_krl = 0
         self.channels = [1,2]
         self.amplitude = 0.1
-        self.mode = ""
         self.q = queue.Queue()
         sd.default.blocksize = 0
         sd.default.samplerate = self.fs
