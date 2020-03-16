@@ -18,13 +18,13 @@ class krl(generator):
         self.channels = [1,2]
         self.amplitude = 0.1
         for j in range(0, 7, 1):
-            self.data_in[j] = ((self.code & 1<<j)>>j)
+            self.data_in[7-j] = ((self.code & 1<<j)>>j)
 
-    def data_signal(self,t):
+    def data_signal(self,t,d_left,d_right):
         '''Генерация сигнала КРЛ '''
 
-        data_left  = np.zeros(len(t))
-        data_right = np.zeros(len(t))
+        data_left = d_left
+        data_right = d_right
         for i in range(len(t)):
             if self.data_in[self.num_bit] == 1:
                 f_cur = self.frequency + self.krl_fdev
@@ -40,6 +40,6 @@ class krl(generator):
                 if self.num_bit > 7:
                     self.num_bit = 0
                     for j in range(0, 7, 1):
-                        self.data_in[j] = ((self.code & 1<<j)>>j)
+                        self.data_in[7-j] = ((self.code & 1<<j)>>j)
         return data_left, data_right
 

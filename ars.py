@@ -18,10 +18,10 @@ class ars(generator):
                         }
         self.amplitude2 = 0.0
 
-    def data_signal(self,t):
+    def data_signal(self,t,d_left,d_right):
         '''Генерация сигнала АРС '''
-        data_left  = np.zeros(len(t))
-        data_right = np.zeros(len(t))
+        data_left  = d_left
+        data_right = d_right
 
         for i in range(len(t)):
             self.count_ars+= 1.0/self.fs

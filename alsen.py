@@ -18,11 +18,11 @@ class alsen(generator):
         self.speed = data_rate
         self.imp_duty_count = int((1/self.speed)/(1/self.fs))
 
-    def data_signal(self,t):
+    def data_signal(self,t,d_left,d_right):
         '''Генерация сигнала АЛСЕН'''
 
-        data_left  = np.zeros(len(t))
-        data_right = np.zeros(len(t))
+        data_left  = d_left
+        data_right = d_right
 
         for i in range(len(t)):
             if self.imp_duty_count < int((1/self.speed)/(1/self.fs)):

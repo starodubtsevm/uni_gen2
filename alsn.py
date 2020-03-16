@@ -29,11 +29,11 @@ class alsn(generator):
                 'pause1': 0.80
                 }
 
-    def data_signal(self,t):
+    def data_signal(self,t,d_left,d_right):
         '''Генерация сигнала АЛСН'''
 
-        data_left  = np.zeros(len(t))
-        data_right = np.zeros(len(t))
+        data_left  = d_left
+        data_right = d_right
         self.alsn_on = 0
 
         if self.code not in ("Green","Yellow","RedYellow"):

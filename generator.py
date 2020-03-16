@@ -7,13 +7,17 @@ class generator(object):
 
     def __audio_callback (self,indata, outdata, frames, time, status):
         """callback function"""
-        if status:
-            print(status, file=sys.stderr)
+        #if status:
+           # print(status, file=sys.stderr)
 
 #--передача-потока на аудиовыход--------------------------------------------
         t = (self.start_idx + np.arange(frames)) / (sd.default.samplerate)
         t = t.reshape(-1, 1)
-        data_left, data_right = self.data_signal(t)
+
+        d_left  = np.zeros(len(t))
+        d_right = np.zeros(len(t))
+
+        data_left, data_right = self.data_signal(t,d_left,d_right)
         data_stereo = np.column_stack([data_left, data_right])
         outdata[::] = data_stereo
         self.start_idx += frames
@@ -42,11 +46,11 @@ class generator(object):
         self.frequency = 800
         self.amplitude = 0.1
 
-    def data_signal(self,t):
+    def data_signal(self,td,d_left,d_right):
         '''Генерация синусоидального сигнала '''
 
-        data_left  = np.zeros(len(t))
-        data_right = np.zeros(len(t))
+        data_right = d_right
+        data_left = l_left
 
         for i in range(len(t)):
             data_left[i]  = (self.A_l * self.amplitude*np.sin(2*np.pi*self.frequency*t[i]))
