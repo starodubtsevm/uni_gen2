@@ -17,7 +17,7 @@ class krl(generator):
         self.count_krl = 0
         self.channels = [1,2]
         self.amplitude = 0.1
-        for j in range(7, -1, -1):
+        for j in range(0, 7, 1):
             self.data_in[j] = ((self.code & 1<<j)>>j)
 
     def data_signal(self,t):
@@ -39,8 +39,7 @@ class krl(generator):
                 self.num_bit+= 1
                 if self.num_bit > 7:
                     self.num_bit = 0
-                    for j in range(7, -1, -1):
+                    for j in range(0, 7, 1):
                         self.data_in[j] = ((self.code & 1<<j)>>j)
-
         return data_left, data_right
 

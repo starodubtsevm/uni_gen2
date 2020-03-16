@@ -16,7 +16,7 @@ ars = ars()
 
 #---------------------------------------------------------------------------
 krl.frequency = 475
-krl.amplitude = 0.1
+krl.amplitude = 0.7
 krl.code = 0x2C
 
 #---------------------------------------------------------------------------
@@ -40,8 +40,8 @@ ars.sao = False
 ars.channel = "both"
 
 #---------------------------------------------------------------------------
-tone1.stream.start()
-#krl.stream.start()
+#tone1.stream.start()
+krl.stream.start()
 #ars.stream.start()
 #alsn.stream.start()
 #alsen.stream.start()
