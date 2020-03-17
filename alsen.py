@@ -4,9 +4,11 @@ from generator import*
 #---------------------------------------
 class alsen(generator):
     '''Класс генератор АЛСЕН (потомок generator)'''
+
     def __init__(self):
-        super(alsen,self).__init__()
         """Инициализация класса"""
+
+        super(alsen,self).__init__()
         self.count_alsen = 0
         self.count_bit = 8
         self.diBit = 0

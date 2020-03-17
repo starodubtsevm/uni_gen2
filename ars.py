@@ -6,8 +6,9 @@ class ars(generator):
     '''Класс генератор АРС (потомок generator)'''
 
     def __init__(self):
+                """Инициализация класса"""
+
         super(ars,self).__init__()
-        """Инициализация класса"""
         self.ars_on = 1
         self.count_ars = 0
         self.frequency2 = 0
@@ -20,6 +21,7 @@ class ars(generator):
 
     def data_signal(self,t,d_left,d_right):
         '''Генерация сигнала АРС '''
+
         data_left  = d_left
         data_right = d_right
 

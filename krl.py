@@ -6,8 +6,9 @@ class krl(generator):
     '''Класс генератор КРЛ (потомок generator)'''
 
     def __init__(self):
-        super(krl,self).__init__()
         """Инициализация класса"""
+
+        super(krl,self).__init__()
         self.data_in= np.zeros(8)
         self.frequency = 475
         self.krl_fdev = 11

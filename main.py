@@ -53,12 +53,12 @@ ars = ars()
 ars.frequency = 75
 ars.frequency2 = 125
 
-ars.amplitude = 0.05
-ars.amplitude2 = 0.05
+ars.amplitude = 0.35
+ars.amplitude2 = 0.35
 ars.sao = False
 ars.channel = "both"
 
-#ars.stream.start()
+ars.stream.start()
 
 #---------------------------------------------------------------------------
 

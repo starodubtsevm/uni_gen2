@@ -7,10 +7,7 @@ class generator(object):
 
     def __audio_callback (self,indata, outdata, frames, time, status):
         """callback function"""
-        #if status:
-           # print(status, file=sys.stderr)
 
-#--передача-потока на аудиовыход--------------------------------------------
         t = (self.start_idx + np.arange(frames)) / (sd.default.samplerate)
         t = t.reshape(-1, 1)
 
@@ -24,11 +21,12 @@ class generator(object):
 
     def __init__(self):
         """Общая инициализация класса"""
+
         sd.default.blocksize = 0
         sd.default.samplerate = fs
         sd.default.channels = 2
-        self.stream = sd.Stream(device = (sd.default.device, sd.default.device),\
-                                                 callback = self.__audio_callback)
+        self.stream = sd.Stream(device = (sd.default.device,\
+                        sd.default.device), callback = self.__audio_callback)
         self.channels = [1,2]
         self.mapping = [c - 1 for c in self.channels]
         self.channel = "both"
@@ -53,8 +51,10 @@ class generator(object):
         data_left = l_left
 
         for i in range(len(t)):
-            data_left[i]  = (self.A_l * self.amplitude*np.sin(2*np.pi*self.frequency*t[i]))
-            data_right[i] = (self.A_r * self.amplitude*np.sin(2*np.pi*self.frequency*t[i]))
+            data_left[i]  = (self.A_l * self.amplitude*np.sin\
+                                            (2*np.pi*self.frequency*t[i]))
+            data_right[i] = (self.A_r * self.amplitude*np.sin\
+                                             (2*np.pi*self.frequency*t[i]))
 
         return data_left, data_right
 

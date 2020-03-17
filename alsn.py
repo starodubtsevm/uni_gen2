@@ -4,9 +4,11 @@ from generator import*
 #---------------------------------------
 class alsn(generator):
     '''Класс генератор АЛСН (потомок generator)'''
+
     def __init__(self):
-        super(alsn,self).__init__()
         """Инициализация класса"""
+
+        super(alsn,self).__init__()
         self.count_alsn = 0
         self.code = None
         self.alsn_on = 0
