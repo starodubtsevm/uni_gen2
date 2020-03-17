@@ -6,7 +6,7 @@ class ars(generator):
     '''Класс генератор АРС (потомок generator)'''
 
     def __init__(self):
-                """Инициализация класса"""
+        """Инициализация класса"""
 
         super(ars,self).__init__()
         self.ars_on = 1
