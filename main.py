@@ -7,21 +7,22 @@ from ars import*
 from const import*
 from generator import*
 
+Us = 0.0088
 #---------------------------------------------------------------------------
 krl1 = krl()
 
 krl1.frequency = 475
-krl1.amplitude = 0.01
-krl1.code = 0x2C
+krl1.amplitude = Us
+krl1.code = 0x2c
 krl1.channel = "both"
 
-krl1.stream.start()
+#krl1.stream.start()
 
 #---------------------------------------------------------------------------
 krl2 = krl()
 
 krl2.frequency = 525
-krl2.amplitude = 0.08
+krl2.amplitude = Us*6
 krl2.code = 0x4A
 krl2.channel = "both"
 
@@ -40,12 +41,12 @@ alsn.amplitude = 0.35
 #---------------------------------------------------------------------------
 alsen = alsen()
 
-alsen.amplitude = 0.7
+alsen.amplitude = 0.22
 alsen.frequency = 174.9
 alsen.channel = "both"
-alsen.code = [0x2C,0x2C]
+alsen.code = [14,14]
 
-#alsen.stream.start()
+alsen.stream.start()
 
 #---------------------------------------------------------------------------
 ars = ars()
@@ -58,7 +59,7 @@ ars.amplitude2 = 0.35
 ars.sao = False
 ars.channel = "both"
 
-ars.stream.start()
+#ars.stream.start()
 
 #---------------------------------------------------------------------------
 
