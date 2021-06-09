@@ -26,12 +26,12 @@ krl2.amplitude = Us*35
 krl2.code = 0x67 
 krl2.channel = "both"
 
-#krl2.stream.start()
+krl2.stream.start()
 
 #---------------------------------------------------------------------------
 alsn = alsn()
 
-alsn.frequency = 75.0
+alsn.frequency = 50.0
 alsn.code = "Green"
 alsn.channel = "both"
 alsn.amplitude = 0.35
@@ -44,9 +44,9 @@ alsen = alsen()
 alsen.amplitude = 0.22
 alsen.frequency = 174.9
 alsen.channel = "both"
-alsen.code = [14,14]
+alsen.code = [6,14]
 
-#alsen.stream.start()
+alsen.stream.start()
 
 #---------------------------------------------------------------------------
 ars = ars()

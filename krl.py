@@ -12,7 +12,7 @@ class krl(generator):
         self.data_in= [0]*8
         self.frequency = 475
         self.krl_fdev = 11
-        self.krl_speed = data_rate
+        self.krl_speed = data_rate_krl
         self.code = 0xAB
         self.count_bit = 0
         self.count_krl = int((1/self.krl_speed)/(1/self.fs))

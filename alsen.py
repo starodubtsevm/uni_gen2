@@ -12,7 +12,7 @@ class alsen(generator):
         self.count_alsen = 0
         self.count_bit = 0
         self.phase = 0
-        self.speed = data_rate
+        self.speed = data_rate_alsen
         self.imp_duty_count = 0
         self.diBit_mass = [0]*8
         self.d_phase_dict = (0, (- np.pi/2), np.pi/2, np.pi)

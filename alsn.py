@@ -13,18 +13,18 @@ class alsn(generator):
         self.code = None
         self.alsn_on = 0
         self.alsn_green = {
-                'pause1': 0.03,
-                'pulse1': 0.38,
-                'pause2': 0.5,
-                'pulse2': 0.72,
-                'pause3': 0.84,
-                'pulse3': 1.06
+                'pause1': 0.57,
+                'pulse1': 0.92,
+                'pause2': 1.04,
+                'pulse2': 1.26,
+                'pause3': 1.38,
+                'pulse3': 1.6
                 }
         self.alsn_yellow = {
-                'pause1': 0.03,
-                'pulse1': 0.41,
-                'pause2': 0.53,
-                'pulse2': 0.91,
+                'pause1': 0.72,
+                'pulse1': 1.1,
+                'pause2': 1.22,
+                'pulse2': 1.6,
                 }
         self.alsn_redyellow = {
                 'pulse1': 0.23,
