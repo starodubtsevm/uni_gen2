@@ -5,6 +5,6 @@ import sys
 import queue
 import numpy as np
 
-fs = 4000.0
+fs = 8000.0
 
-data_rate = 11.0
+data_rate = 12.987

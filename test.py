@@ -1,11 +1,17 @@
 import numpy as np
 
-code = 0X2C
-data_in = np.zeros(8)
 
-num_bit = 0
+Byte = 0x1F
+Bits_mass =[0]*8
 
-for j in range(7, 0, -1):
-    data_in[7-j] = ((code & 1<<j)>>j)
+for i in range (8):
+    if ((Byte & 0x80)>>7) == 1:
+        Bits_mass[i] = 1
+    else:
+        Bits_mass[i] = 0
+    print(i)
+    Byte = Byte<<1
 
-print(data_in)
+
+print(Bits_mass)
+
