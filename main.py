@@ -44,7 +44,7 @@ alsen = alsen()
 alsen.amplitude = 0.22
 alsen.frequency = 174.9
 alsen.channel = "both"
-alsen.code = [6,14]
+alsen.code = [6,14] # syncro group, code command
 
 alsen.stream.start()
 

@@ -36,8 +36,8 @@ class alsen(generator):
                 self.imp_duty_count=0
                 if self.count_bit==8:
                     self.count_bit=0
-                    Byte1 = self.Bauer_dict[self.code[0]]
-                    Byte2 = self.Bauer_dict[self.code[1]]
+                    Byte1 = self.Bauer_dict[self.code[1]]
+                    Byte2 = self.Bauer_dict[self.code[0]]
 
                     for i in range (8):
                         diBit=((Byte1 & 0x80)>>7) + ((Byte2 & 0x80)>>6)
